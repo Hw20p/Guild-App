@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane fx:id="mainBorderPane"
+            xmlns="http://javafx.com/javafx/17.0.2"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.hyeon.controller.MainController"
+            style="-fx-background-color: linear-gradient(to bottom, #667eea 0%, #764ba2 100%);">
+
+    <!-- 메인 컨텐츠 영역 -->
+    <center>
+        <VBox alignment="CENTER" spacing="25" style="-fx-padding: 50;">
+
+            <!-- 타이틀 -->
+            <Label text="🍁 메이플스토리 캐릭터 검색 🍁"
+                   style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: white; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 2, 0, 1, 1);"/>
+
+            <!-- 검색 영역 -->
+            <VBox alignment="CENTER" spacing="15"
+                  style="-fx-background-color: rgba(255,255,255,0.95); -fx-background-radius: 15; -fx-padding: 30; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 2);"
+                  maxWidth="400">
+
+                <Label text="캐릭터 닉네임을 입력하세요"
+                       style="-fx-font-size: 16px; -fx-text-fill: #333;"/>
+
+                <TextField fx:id="nicknameField"
+                           promptText="예: 홍길동123"
+                           maxWidth="300"
+                           style="-fx-font-size: 14px; -fx-padding: 12 15; -fx-background-radius: 25; -fx-border-color: #ddd; -fx-border-radius: 25; -fx-border-width: 1;"/>
+
+                <HBox alignment="CENTER" spacing="10">
+                    <Button fx:id="searchButton"
+                            text="🔍 검색하기"
+                            onAction="#onSearchClicked"
+                            style="-fx-font-size: 14px; -fx-padding: 12 25; -fx-background-color: #4CAF50; -fx-text-fill: white; -fx-background-radius: 25;"/>
+
+                    <ProgressIndicator fx:id="loadingIndicator"
+                                       maxWidth="24"
+                                       maxHeight="24"/>
+                </HBox>
+
+                <Label fx:id="statusLabel"
+                       text="닉네임을 입력하고 검색해보세요!"
+                       style="-fx-font-size: 12px; -fx-text-fill: #666;"
+                       wrapText="true"/>
+            </VBox>
+
+            <!-- 안내 정보 -->
+            <VBox alignment="CENTER" spacing="8"
+                  style="-fx-background-color: rgba(255,255,255,0.1); -fx-background-radius: 10; -fx-padding: 20;"
+                  maxWidth="500">
+                <Label text="💡 이용 안내"
+                       style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+                <Label text="• 정확한 캐릭터 닉네임을 입력해주세요"
+                       style="-fx-font-size: 12px; -fx-text-fill: rgba(255,255,255,0.9);"/>
+                <Label text="• 캐릭터 정보는 하루 전 데이터를 기준으로 합니다"
+                       style="-fx-font-size: 12px; -fx-text-fill: rgba(255,255,255,0.9);"/>
+                <Label text="• 검색 결과는 동일한 창에서 표시됩니다"
+                       style="-fx-font-size: 12px; -fx-text-fill: rgba(255,255,255,0.9);"/>
+            </VBox>
+        </VBox>
+    </center>
+
+    <!-- 하단 정보 -->
+    <bottom>
+        <HBox alignment="CENTER"
+              style="-fx-padding: 15; -fx-background-color: rgba(0,0,0,0.2);">
+            <Label text="Powered by NEXON Open API"
+                   style="-fx-font-size: 11px; -fx-text-fill: rgba(255,255,255,0.7);"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

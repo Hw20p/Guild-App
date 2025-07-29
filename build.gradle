@@ -18,6 +18,9 @@ dependencies {
     // H2 데이터베이스 추가
     implementation 'com.h2database:h2:2.2.224'
 
+    // 🔽 Jackson 추가 (JSON 파싱용)
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.17.0'
+
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
 }

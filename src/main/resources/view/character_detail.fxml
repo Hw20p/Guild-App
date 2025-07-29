@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/17.0.2"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.hyeon.controller.CharacterDetailController"
+      spacing="20"
+      style="-fx-padding: 30;">
+
+    <!-- 뒤로가기 버튼 -->
+    <HBox alignment="CENTER_LEFT">
+        <Button text="⬅️ 검색으로 돌아가기"
+                onAction="#goBackToSearch"
+                style="-fx-font-size: 13px; -fx-padding: 8 15; -fx-background-color: #95a5a6; -fx-text-fill: white; -fx-background-radius: 20; -fx-cursor: hand;"/>
+    </HBox>
+
+    <!-- 헤더 -->
+    <VBox alignment="CENTER" spacing="10"
+          style="-fx-background-color: rgba(255,255,255,0.95); -fx-background-radius: 15; -fx-padding: 25; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 2);">
+
+        <Label fx:id="characterNameLabel"
+               text="캐릭터명"
+               style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+
+        <Label fx:id="serverLabel"
+               text="서버명"
+               style="-fx-font-size: 14px; -fx-text-fill: #7f8c8d;"/>
+    </VBox>
+
+    <!-- 기본 정보 -->
+    <VBox spacing="15"
+          style="-fx-background-color: rgba(255,255,255,0.95); -fx-background-radius: 15; -fx-padding: 25; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 2);">
+
+        <Label text="📊 기본 정보"
+               style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+
+        <GridPane hgap="20" vgap="12">
+            <columnConstraints>
+                <ColumnConstraints minWidth="80" prefWidth="80"/>
+                <ColumnConstraints minWidth="200" prefWidth="200"/>
+            </columnConstraints>
+
+            <Label text="레벨:"
+                   style="-fx-font-weight: bold; -fx-text-fill: #34495e;"
+                   GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <Label fx:id="levelLabel"
+                   text="0"
+                   style="-fx-text-fill: #e74c3c; -fx-font-weight: bold; -fx-font-size: 16px;"
+                   GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+            <Label text="직업:"
+                   style="-fx-font-weight: bold; -fx-text-fill: #34495e;"
+                   GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <Label fx:id="jobLabel"
+                   text="직업"
+                   style="-fx-text-fill: #3498db; -fx-font-weight: bold;"
+                   GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+            <Label text="서버:"
+                   style="-fx-font-weight: bold; -fx-text-fill: #34495e;"
+                   GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+            <Label fx:id="worldLabel"
+                   text="서버"
+                   style="-fx-text-fill: #27ae60; -fx-font-weight: bold;"
+                   GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+        </GridPane>
+    </VBox>
+
+    <!-- 추가 기능 버튼들 -->
+    <HBox spacing="15" alignment="CENTER">
+        <Button text="🗡️ 장비 정보"
+                onAction="#showEquipment"
+                style="-fx-font-size: 14px; -fx-padding: 12 20; -fx-background-color: #e74c3c; -fx-text-fill: white; -fx-background-radius: 25; -fx-cursor: hand;"/>
+
+        <Button text="📈 스탯 정보"
+                onAction="#showStats"
+                style="-fx-font-size: 14px; -fx-padding: 12 20; -fx-background-color: #3498db; -fx-text-fill: white; -fx-background-radius: 25; -fx-cursor: hand;"/>
+
+        <Button text="🎯 스킬 정보"
+                onAction="#showSkills"
+                style="-fx-font-size: 14px; -fx-padding: 12 20; -fx-background-color: #27ae60; -fx-text-fill: white; -fx-background-radius: 25; -fx-cursor: hand;"/>
+    </HBox>
+
+    <!-- 하단 정보 -->
+    <VBox alignment="CENTER" spacing="5"
+          style="-fx-background-color: rgba(255,255,255,0.1); -fx-background-radius: 10; -fx-padding: 15;">
+        <Label text="💡 더 많은 정보가 필요하다면 위 버튼들을 클릭해보세요!"
+               style="-fx-font-size: 12px; -fx-text-fill: #7f8c8d;"
+               wrapText="true"/>
+    </VBox>
+
+</VBox>

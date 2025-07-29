@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="10" alignment="TOP_CENTER" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.hyeon.controller.GuildController" style="-fx-padding: 20;">
+    <Label text="길드 멤버 등록" style="-fx-font-size: 20;" />
+
+    <TextField fx:id="nameField" promptText="이름" />
+    <TextField fx:id="subsField" promptText="부캐 이름들 (쉼표로 구분)" />
+    <TextField fx:id="knightsField" promptText="기사 캐릭터 이름들 (쉼표로 구분)" />
+
+    <Button text="등록" onAction="#handleAddMember" />
+
+    <ListView fx:id="memberListView" prefHeight="200" />
+</VBox>

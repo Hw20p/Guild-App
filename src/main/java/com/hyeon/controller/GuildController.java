@@ -243,6 +243,12 @@ public class GuildController {
 
     @FXML
     public void handleAddSampleData() {
+        // 먼저 데이터가 있는지 확인
+        if (!service.getAllMembers().isEmpty()) {
+            showAlert("이미 데이터가 존재합니다. 샘플 데이터를 추가할 수 없습니다.", Alert.AlertType.WARNING);
+            return;
+        }
+
         Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
         confirmAlert.setTitle("샘플 데이터 추가");
         confirmAlert.setHeaderText("샘플 데이터를 추가하시겠습니까?");

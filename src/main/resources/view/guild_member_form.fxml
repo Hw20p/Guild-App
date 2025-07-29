@@ -40,19 +40,19 @@
 
                             <VBox spacing="5">
                                 <Label text="이름 *" />
-                                <TextField fx:id="nameField" promptText="길드원 이름을 입력하세요" />
+                                <TextField fx:id="nameField" promptText="본캐/기사 이름을 입력하세요" />
                             </VBox>
 
                             <VBox spacing="5">
                                 <Label text="부캐 목록" />
-                                <TextField fx:id="subsField" promptText="부캐 이름들 (쉼표로 구분)" />
+                                <TextField fx:id="subsField" promptText="부캐/부기사 이름들 (쉼표로 구분)" />
                                 <Label text="예: 부캐1, 부캐2, 부캐3" style="-fx-font-size: 10; -fx-text-fill: gray;" />
                             </VBox>
 
                             <VBox spacing="5">
                                 <Label text="기사 캐릭터 목록" />
-                                <TextField fx:id="knightsField" promptText="기사 캐릭터 이름들 (쉼표로 구분)" />
-                                <Label text="예: 기사1, 기사2, 기사3" style="-fx-font-size: 10; -fx-text-fill: gray;" />
+                                <TextField fx:id="knightsField" promptText="배럭 이름들 (쉼표로 구분)" />
+                                <Label text="예: 배럭1, 배럭2, 배럭3" style="-fx-font-size: 10; -fx-text-fill: gray;" />
                             </VBox>
 
                             <!-- 버튼 그룹 -->
@@ -84,7 +84,7 @@
                             <!-- 검색 바 -->
                             <HBox spacing="10" alignment="CENTER_LEFT">
                                 <Label text="검색:" />
-                                <TextField fx:id="searchField" promptText="이름, 부캐, 기사로 검색..."
+                                <TextField fx:id="searchField" promptText="닉네임 입력하여 검색..."
                                            HBox.hgrow="ALWAYS" />
                                 <Button fx:id="searchButton" text="검색" onAction="#handleSearch" />
                                 <Button fx:id="clearSearchButton" text="전체보기" onAction="#handleClearSearch" />
@@ -93,18 +93,18 @@
                             <!-- 테이블 -->
                             <TableView fx:id="memberTable" VBox.vgrow="ALWAYS">
                                 <columns>
-                                    <TableColumn fx:id="nameColumn" text="이름" prefWidth="150" />
-                                    <TableColumn fx:id="subsColumn" text="부캐" prefWidth="250" />
-                                    <TableColumn fx:id="knightsColumn" text="기사" prefWidth="250" />
+                                    <TableColumn fx:id="nameColumn" text="본캐/기사" prefWidth="150" />
+                                    <TableColumn fx:id="subsColumn" text="부캐/부기사" prefWidth="250" />
+                                    <TableColumn fx:id="knightsColumn" text="배럭" prefWidth="250" />
                                 </columns>
                                 <placeholder>
-                                    <Label text="등록된 길드 멤버가 없습니다.\n좌측에서 새 멤버를 등록해보세요."
+                                    <Label text="등록된 길드 멤버가 없습니다. 좌측에서 새 멤버를 등록해보세요."
                                            style="-fx-text-alignment: center;" />
                                 </placeholder>
                             </TableView>
 
                             <Label text="💡 팁: 테이블에서 더블클릭하면 수정, 우클릭하면 메뉴가 나타납니다."
-                                   style="-fx-font-size: 10; -fx-text-fill: gray;" />
+                                   style="-fx-font-size: 12; -fx-text-fill: gray;" />
                         </VBox>
                     </center>
                 </BorderPane>
